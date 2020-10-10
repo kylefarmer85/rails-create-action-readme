@@ -40,3 +40,68 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title Goes Here"], ["description", "Desc goes here..."], ["created_at", "2020-10-10 23:09:25.272555"], ["updated_at", "2020-10-10 23:09:25.272555"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/posts/new" for ::1 at 2020-10-10 18:12:16 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 742ms (Views: 661.6ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/posts" for ::1 at 2020-10-10 18:14:37 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PHbOArCPjkia+1is0Ygwo2fm3xdVPZDvQs9rZNPEXluck/QI/OJM5g2l9yUPZ3+LuoiXj+AYbtO4XeVw6ymASw==", "title"=>"post title 1", "description"=>"post desc 1", "commit"=>"Submit Post"}
+  [1m[35m (1.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "post title 1"], ["description", "post desc 1"], ["created_at", "2020-10-10 23:14:37.677160"], ["updated_at", "2020-10-10 23:14:37.677160"]]
+  [1m[35m (18.4ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 203ms (ActiveRecord: 25.6ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-10-10 18:15:23 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-10-10 18:15:27 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KpRyPqZSmx+RuA0iN4BVgF6z0H6W3zdE38CoTzXp16SKcUg06j9ZsQbmoqvpbxqog92Y5iP6yXglUiZbDQQJtA==", "title"=>"d", "description"=>"ds", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "d"], ["description", "ds"], ["created_at", "2020-10-10 23:15:27.399469"], ["updated_at", "2020-10-10 23:15:27.399469"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 50ms (ActiveRecord: 2.0ms)
+
+
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/posts/new" for ::1 at 2020-10-10 18:17:48 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 55ms (Views: 43.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/posts" for ::1 at 2020-10-10 18:17:52 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"unsdwq6UMx20SUZ/TkRGcpuE4MGLmNQhMokkMs2cmVkanifI4vnxsyMX6faQqwlaRuqoWT69Kh3IG6om9XFHSQ==", "title"=>"he", "description"=>"ger", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "he"], ["description", "ger"], ["created_at", "2020-10-10 23:17:52.685732"], ["updated_at", "2020-10-10 23:17:52.685732"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 9ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/posts/5" for ::1 at 2020-10-10 18:17:52 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 23.0ms | ActiveRecord: 0.4ms)
+
+
